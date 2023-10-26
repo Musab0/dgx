@@ -1,0 +1,2 @@
+deb https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64/ focal common dgx
+deb https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64/ focal-updates common dgx
