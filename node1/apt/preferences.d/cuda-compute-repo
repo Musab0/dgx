@@ -1,0 +1,15 @@
+Package: *
+Pin: release l=NVIDIA CUDA
+Pin-Priority: 580
+
+Package: cuda-drivers*
+Pin: release l=NVIDIA CUDA
+Pin-Priority: -1
+
+Package: nsight-compute
+Pin: origin *ubuntu.com*
+Pin-Priority: -1
+
+Package: nsight-systems
+Pin: origin *ubuntu.com*
+Pin-Priority: -1
