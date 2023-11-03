@@ -1,0 +1,1105 @@
+
+PLAY [all] *********************************************************************
+
+TASK [Set facts when not using docker container runtime (default)] *************
+ok: [mgmt1]
+ok: [dgx1]
+ok: [dgx2]
+ok: [dgx3]
+ok: [dgx4]
+
+TASK [Set facts when using Docker container runtime] ***************************
+skipping: [mgmt1]
+skipping: [dgx1]
+skipping: [dgx2]
+skipping: [dgx3]
+skipping: [dgx4]
+
+PLAY [all] *********************************************************************
+
+TASK [install python (no proxy)] ***********************************************
+ok: [mgmt1]
+changed: [dgx1]
+changed: [dgx2]
+changed: [dgx3]
+changed: [dgx4]
+
+TASK [install python (using proxy)] ********************************************
+skipping: [mgmt1]
+skipping: [dgx1]
+skipping: [dgx2]
+skipping: [dgx3]
+skipping: [dgx4]
+
+PLAY [all] *********************************************************************
+
+TASK [force an apt update on Ubuntu] *******************************************
+changed: [mgmt1]
+fatal: [dgx1]: FAILED! => changed=false 
+  msg: 'Failed to update apt cache: W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC, E:The repository ''https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64
+    focal InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease'' is not signed.'
+fatal: [dgx4]: FAILED! => changed=false 
+  msg: 'Failed to update apt cache: W:GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC, E:The repository ''https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for
+    repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:Release file for http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease is not valid yet (invalid for another 1h 28min 11s). Updates for this repository will not be applied., E:Release file for http://us.archive.ubuntu.com/ubuntu/dists/focal-updates/InRelease is not valid yet (invalid for another 3h 45min 1s). Updates for this repository will not be applied.'
+fatal: [dgx2]: FAILED! => changed=false 
+  msg: 'Failed to update apt cache: W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository
+    creation and user configuration details., W:GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC, E:The repository ''https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:Release file for http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease is not valid yet (invalid for another 1h 31min 40s). Updates for this repository will not be applied., E:Release file for http://us.archive.ubuntu.com/ubuntu/dists/focal-updates/InRelease is not valid yet (invalid for another 3h 48min 31s). Updates for this repository will not be applied.'
+fatal: [dgx3]: FAILED! => changed=false 
+  msg: 'Failed to update apt cache: W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., W:GPG error: https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY 208CE844D9F220AD, E:The repository ''https://repo.download.nvidia.com/baseos/ubuntu/focal/x86_64 focal-updates InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository
+    creation and user configuration details., W:GPG error: https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease: The following signatures couldn''t be verified because the public key is not available: NO_PUBKEY A4B469963BF863CC, E:The repository ''https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64  InRelease'' is not signed., W:Updating from such a repository can''t be done securely, and is therefore disabled by default., W:See apt-secure(8) manpage for repository creation and user configuration details., E:Release file for http://security.ubuntu.com/ubuntu/dists/focal-security/InRelease is not valid yet (invalid for another 1h 28min 20s). Updates for this repository will not be applied., E:Release file for http://us.archive.ubuntu.com/ubuntu/dists/focal-updates/InRelease is not valid yet (invalid for another 3h 45min 11s). Updates for this repository will not be applied.'
+
+TASK [install python 3 libraries if python 3 is present] ***********************
+ok: [mgmt1]
+
+TASK [install epel on EL7] *****************************************************
+skipping: [mgmt1]
+
+TASK [install python 2 libraries on EL7] ***************************************
+skipping: [mgmt1]
+
+PLAY [all] *********************************************************************
+
+TASK [make sure kubespray is at the correct version] ***************************
+changed: [mgmt1 -> localhost]
+
+PLAY [all] *********************************************************************
+
+TASK [set SSH key location] ****************************************************
+ok: [mgmt1]
+
+TASK [Create SSH directory if it doesn't exist] ********************************
+ok: [mgmt1 -> 127.0.0.1]
+
+TASK [Generate default SSH keypair if it doesn't exist] ************************
+ok: [mgmt1 -> 127.0.0.1]
+
+TASK [run setup to get ansible user] *******************************************
+ok: [mgmt1]
+
+TASK [Add SSH public key to ansible user authorized keys] **********************
+ok: [mgmt1]
+
+TASK [debug] *******************************************************************
+ok: [mgmt1 -> 127.0.0.1] => 
+  msg: Now, you shouldn't need to use -k/--ask-pass for these hosts anymore.
+
+PLAY [all] *********************************************************************
+
+TASK [run setup to get ansible user] *******************************************
+ok: [mgmt1]
+
+TASK [check for presence of sudo] **********************************************
+ok: [mgmt1]
+
+TASK [use method "sudo" (requires password for "aioadmin")] ********************
+ok: [mgmt1]
+
+TASK [use method "su" (requires password for "root")] **************************
+skipping: [mgmt1]
+
+TASK [install sudo package] ****************************************************
+ok: [mgmt1]
+
+TASK [grant password-less sudo to user "aioadmin"] *****************************
+ok: [mgmt1]
+
+TASK [debug] *******************************************************************
+ok: [mgmt1 -> 127.0.0.1] => 
+  msg: Now, you shouldn't need to use -K/--ask-become-pass for these hosts anymore.
+
+PLAY [all] *********************************************************************
+
+TASK [check if /etc/cloud is present] ******************************************
+ok: [mgmt1]
+
+TASK [disable generator for setting cloud-init target] *************************
+changed: [mgmt1]
+
+TASK [disable all systemd services] ********************************************
+ok: [mgmt1] => (item=cloud-init)
+ok: [mgmt1] => (item=cloud-config)
+ok: [mgmt1] => (item=cloud-final)
+
+PLAY [all] *********************************************************************
+
+TASK [Configure Chrony client] *************************************************
+
+TASK [DeepOps.chrony : Add the OS specific variables] **************************
+ok: [mgmt1]
+
+TASK [DeepOps.chrony : Installation] *******************************************
+included: /home/aioadmin/deepops/roles/galaxy/DeepOps.chrony/tasks/debian.yml for mgmt1
+
+TASK [DeepOps.chrony : Install the require packages in Debian derivatives] *****
+ok: [mgmt1]
+
+TASK [DeepOps.chrony : Copy the chrony.conf template file] *********************
+ok: [mgmt1]
+
+TASK [DeepOps.chrony : Start and enable chrony service] ************************
+ok: [mgmt1]
+
+TASK [DeepOps.chrony : Ensure tzdata package is installed] *********************
+ok: [mgmt1]
+
+TASK [DeepOps.chrony : Set timezone] *******************************************
+ok: [mgmt1]
+
+PLAY [kube-master] *************************************************************
+
+TASK [Install required Python OpenShift packages/libraries] ********************
+
+TASK [openshift : install virtualenv and setuptools] ***************************
+ok: [mgmt1] => (item=virtualenv)
+ok: [mgmt1] => (item=python3-setuptools)
+
+TASK [openshift : create location for deepops files] ***************************
+ok: [mgmt1]
+
+TASK [openshift : install openshift python client for k8s_raw module] **********
+ok: [mgmt1]
+
+TASK [openshift : trust GPG key for EPEL] **************************************
+skipping: [mgmt1]
+
+TASK [openshift : install EPEL for CentOS] *************************************
+skipping: [mgmt1]
+
+TASK [openshift : install openshift python client for k8s_raw module] **********
+skipping: [mgmt1]
+
+TASK [openshift : install openshift python client for k8s_raw module] **********
+skipping: [mgmt1]
+
+PLAY [all] *********************************************************************
+
+TASK [set /etc/hostname] *******************************************************
+ok: [mgmt1]
+
+TASK [set /etc/hosts] **********************************************************
+
+TASK [DeepOps.hosts : Gather facts again] **************************************
+ok: [mgmt1]
+
+TASK [DeepOps.hosts : register hosts list if ansible group limit is specified] ***
+ok: [mgmt1]
+
+TASK [DeepOps.hosts : Install user-defined custom hosts file] ******************
+skipping: [mgmt1]
+
+TASK [DeepOps.hosts : Install custom hosts file] *******************************
+ok: [mgmt1]
+
+TASK [DeepOps.hosts : render custom hosts template] ****************************
+skipping: [mgmt1]
+
+TASK [DeepOps.hosts : Add Managed Block to /etc/hosts] *************************
+skipping: [mgmt1]
+
+PLAY [kube-master] *************************************************************
+
+TASK [Force binaries directory for Flatcar Container Linux by Kinvolk] *********
+skipping: [mgmt1]
+
+TASK [Set os_family fact for other redhat-based operating systems] *************
+skipping: [mgmt1]
+
+TASK [Set os_family fact for other debian-based operating systems] *************
+skipping: [mgmt1]
+
+TASK [check if booted with ostree] *********************************************
+skipping: [mgmt1]
+
+TASK [set is_fedora_coreos] ****************************************************
+skipping: [mgmt1]
+
+TASK [set is_fedora_coreos] ****************************************************
+skipping: [mgmt1]
+
+TASK [check resolvconf] ********************************************************
+skipping: [mgmt1]
+
+TASK [check existence of /etc/resolvconf/resolv.conf.d] ************************
+skipping: [mgmt1]
+
+TASK [check status of /etc/resolv.conf] ****************************************
+skipping: [mgmt1]
+
+TASK [get content of /etc/resolv.conf] *****************************************
+skipping: [mgmt1]
+
+TASK [get currently configured nameservers] ************************************
+skipping: [mgmt1]
+
+TASK [Stop if /etc/resolv.conf not configured nameservers] *********************
+skipping: [mgmt1]
+
+TASK [NetworkManager | Check if host has NetworkManager] ***********************
+skipping: [mgmt1]
+
+TASK [check systemd-resolved] **************************************************
+skipping: [mgmt1]
+
+TASK [set default dns if remove_default_searchdomains is false] ****************
+skipping: [mgmt1]
+
+TASK [set dns facts] ***********************************************************
+skipping: [mgmt1]
+
+TASK [check if kubelet is configured] ******************************************
+skipping: [mgmt1]
+
+TASK [check if early DNS configuration stage] **********************************
+skipping: [mgmt1]
+
+TASK [target resolv.conf files] ************************************************
+skipping: [mgmt1]
+
+TASK [target temporary resolvconf cloud init file (Flatcar Container Linux by Kinvolk / Fedora CoreOS)] ***
+skipping: [mgmt1]
+
+TASK [check if /etc/dhclient.conf exists] **************************************
+skipping: [mgmt1]
+
+TASK [target dhclient conf file for /etc/dhclient.conf] ************************
+skipping: [mgmt1]
+
+TASK [check if /etc/dhcp/dhclient.conf exists] *********************************
+skipping: [mgmt1]
+
+TASK [target dhclient conf file for /etc/dhcp/dhclient.conf] *******************
+skipping: [mgmt1]
+
+TASK [target dhclient hook file for Red Hat family] ****************************
+skipping: [mgmt1]
+
+TASK [target dhclient hook file for Debian family] *****************************
+skipping: [mgmt1]
+
+TASK [generate search domains to resolvconf] ***********************************
+skipping: [mgmt1]
+
+TASK [pick coredns cluster IP or default resolver] *****************************
+skipping: [mgmt1]
+
+TASK [generate nameservers for resolvconf, including cluster DNS] **************
+skipping: [mgmt1]
+
+TASK [generate nameservers for resolvconf, not including cluster DNS] **********
+skipping: [mgmt1]
+
+TASK [gather os specific variables] ********************************************
+skipping: [mgmt1] => (item=/home/aioadmin/deepops/submodules/kubespray/roles/kubernetes/preinstall/tasks/../vars/ubuntu.yml) 
+
+TASK [set etcd vars if using kubeadm mode] *************************************
+skipping: [mgmt1]
+
+TASK [check /usr readonly] *****************************************************
+skipping: [mgmt1]
+
+TASK [set alternate flexvolume path] *******************************************
+skipping: [mgmt1]
+
+TASK [remove docker overrides, specifically to deal with conflicting options from DGX OS] ***
+skipping: [mgmt1]
+
+PLAY [kube-master] *************************************************************
+
+TASK [download : prep_download | Set a few facts] ******************************
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if passwordless root is possible] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if user has access to the container runtime without using sudo] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Parse the outputs of the previous commands] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Check that local user is in group or can become root] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Register docker images info] ******************
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create staging directory on remote node] ******
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create local cache for files and images on control node] ***
+skipping: [mgmt1]
+
+TASK [download : download | Get kubeadm binary and list of required images] ****
+skipping: [mgmt1]
+
+TASK [download : download | Download files / images] ***************************
+skipping: [mgmt1] => (item={'key': 'netcheck_server', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-server', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'netcheck_agent', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-agent', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'etcd', 'value': {'container': False, 'file': True, 'enabled': True, 'version': 'v3.5.6', 'dest': '/tmp/releases/etcd-v3.5.6-linux-amd64.tar.gz', 'repo': 'quay.io/coreos/etcd', 'tag': 'v3.5.6', 'sha256': '4db32e3bc06dd0999e2171f76a87c1cffed8369475ec7aa7abee9023635670fb', 'url': 'https://github.com/etcd-io/etcd/releases/download/v3.5.6/etcd-v3.5.6-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['etcd']}}) 
+skipping: [mgmt1] => (item={'key': 'cni', 'value': {'enabled': True, 'file': True, 'version': 'v1.3.0', 'dest': '/tmp/releases/cni-plugins-linux-amd64-v1.3.0.tgz', 'sha256': '754a71ed60a4bd08726c3af705a7d55ee3df03122b12e389fdba4bea35d7dd7e', 'url': 'https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubeadm', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubeadm-v1.26.5-amd64', 'sha256': '793767419c382bae2dc2c9396baafbf051bfa3214accf40dcd7c5ea405583802', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubeadm', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubelet', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubelet-v1.26.5-amd64', 'sha256': 'ad5e318ff0e81bc2bef874b2038489722cfcc117bd31726d0193056458c18bff', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubelet', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubectl', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubectl-v1.26.5-amd64', 'sha256': '5080bb2e9631fe095139f7e973df9a31eb73e668d1785ffeb524832aed8f87c3', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubectl', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'crictl', 'value': {'file': True, 'enabled': True, 'version': 'v1.26.0', 'dest': '/tmp/releases/crictl-v1.26.0-linux-amd64.tar.gz', 'sha256': 'cda5e2143bf19f6b548110ffba0fe3565e03e8743fadd625fee3d62fc4134eed', 'url': 'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.26.0/crictl-v1.26.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crio', 'value': {'file': True, 'enabled': False, 'version': 'v1.26.3', 'dest': '/tmp/releases/cri-o.amd64.v1.26.3tar.gz', 'sha256': '942772081d9cd4bd0c07e466439b76a1ca95d3f10a7b53dc524d2946b2b17a71', 'url': 'https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.26.3.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cri_dockerd', 'value': {'file': True, 'enabled': False, 'version': '0.3.0', 'dest': '/tmp/releases/cri-dockerd-0.3.0.amd64.tar.gz', 'sha256': '8e6a445591e77b9570299d0afadeee26cb7aa23e4bfd7518baa6a3260b9ee889', 'url': 'https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.0/cri-dockerd-0.3.0.amd64.tgz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=1'], 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crun', 'value': {'file': True, 'enabled': False, 'version': '1.4.5', 'dest': '/tmp/releases/crun', 'sha256': '84cf20a6060cd53ac21a0590367d1ab65f74baae005c42f2d5bc1af918470455', 'url': 'https://github.com/containers/crun/releases/download/1.4.5/crun-1.4.5-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'youki', 'value': {'file': True, 'enabled': False, 'version': '0.0.1', 'dest': '/tmp/releases/youki_v0_0_1_linux.tar.gz', 'sha256': '8bd712fe95c8a81194bfbc54c70516350f95153d67044579af95788fbafd943b', 'url': 'https://github.com/containers/youki/releases/download/v0.0.1/youki_v0_0_1_linux.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'runc', 'value': {'file': True, 'enabled': True, 'version': 'v1.1.7', 'dest': '/tmp/releases/runc', 'sha256': 'c3aadb419e5872af49504b6de894055251d2e685fddddb981a79703e7f895cbd', 'url': 'https://github.com/opencontainers/runc/releases/download/v1.1.7/runc.amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kata_containers', 'value': {'enabled': False, 'file': True, 'version': '2.4.1', 'dest': '/tmp/releases/kata-static-2.4.1-amd64.tar.xz', 'sha256': 'e234ffce779d451dc2a170b394b91d35b96e44ea50dc4a3256defa603efdf607', 'url': 'https://github.com/kata-containers/kata-containers/releases/download/2.4.1/kata-static-2.4.1-x86_64.tar.xz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'containerd', 'value': {'enabled': True, 'file': True, 'version': '1.7.1', 'dest': '/tmp/releases/containerd-1.7.1-linux-amd64.tar.gz', 'sha256': '9504771bcb816d3b27fab37a6cf76928ee5e95a31eb41510a7d10ae726e01e85', 'url': 'https://github.com/containerd/containerd/releases/download/v1.7.1/containerd-1.7.1-linux-amd64.tar.gz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_runsc', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-runsc', 'sha256': 'af5b4527b2d63eea6d0cc2c5522b1e76163df695e9484475e378ec29f7baa661', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/runsc', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_containerd_shim', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-containerd-shim-runsc-v1', 'sha256': '9ed085fcdbf6f300474e10f2f32b323038568342ce8130298f56e13d14484daa', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/containerd-shim-runsc-v1', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nerdctl', 'value': {'file': True, 'enabled': True, 'version': '1.4.0', 'dest': '/tmp/releases/nerdctl-1.4.0-linux-amd64.tar.gz', 'sha256': 'd8dcd4e270ae76ab294be3a451a2d8299010e69dce6ae559bc3193535610e4cc', 'url': 'https://github.com/containerd/nerdctl/releases/download/v1.4.0/nerdctl-1.4.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'skopeo', 'value': {'file': True, 'enabled': False, 'version': 'v1.10.0', 'dest': '/tmp/releases/skopeo', 'sha256': '20fbd1bac1d33768c3671e4fe9d90c5233d7e13a40e4935b4b24ebc083390604', 'url': 'https://github.com/lework/skopeo-binary/releases/download/v1.10.0/skopeo-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/cilium', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_operator', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/operator', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_relay', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-relay', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_certgen', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/certgen', 'tag': 'v0.1.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui_backend', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui-backend', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_envoy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/envoyproxy/envoy', 'tag': 'v1.22.5', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'ciliumcli', 'value': {'enabled': False, 'file': True, 'version': 'v0.13.1', 'dest': '/tmp/releases/cilium', 'sha256': 'dfabb7a080cd2ae40c71e51980183949bd5ce76184ac439ef32f988825cb275d', 'url': 'https://github.com/cilium/cilium-cli/releases/download/v0.13.1/cilium-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'multus', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/k8snetworkplumbingwg/multus-cni', 'tag': 'v3.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannel/flannel', 'tag': 'v0.21.4', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel_init', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannelcni/flannel-cni-plugin', 'tag': 'v1.2.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calicoctl', 'value': {'enabled': True, 'file': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calicoctl', 'sha256': '13565e5304209ffaa93df3ba722e6f623b66c76057ca8ff5c5864fa13176fe48', 'url': 'https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64', 'mirrors': ['https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64'], 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_node', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/node', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_cni', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/cni', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_flexvol', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/pod2daemon-flexvol', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_policy', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/kube-controllers', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_typha', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/typha', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_apiserver', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/apiserver', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_crds', 'value': {'file': True, 'enabled': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calico-v3.25.1-kdd-crds/v3.25.1.tar.gz', 'sha256': '4d6b6653499f24f80a85a0a7dac28d9571cabfa25356b08f3b438fd97e322e2d', 'url': 'https://github.com/projectcalico/calico/archive/v3.25.1.tar.gz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=3', '--wildcards', '*/libcalico-go/config/crd/'], 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_kube', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-kube', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_npc', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-npc', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_ovn', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/kubeovn/kube-ovn', 'tag': 'v1.10.7', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_router', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/cloudnativelabs/kube-router', 'tag': 'v1.5.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'pod_infra', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/pause', 'tag': '3.9', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube-vip', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/kube-vip/kube-vip', 'tag': 'v0.5.12', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'nginx', 'value': {'enabled': True, 'container': True, 'repo': 'docker.io/library/nginx', 'tag': '1.23.2-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'haproxy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/haproxy', 'tag': '2.6.6-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'coredns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/coredns/coredns', 'tag': 'v1.9.3', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nodelocaldns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/dns/k8s-dns-node-cache', 'tag': '1.22.18', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'dnsautoscaler', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/cpa/cluster-proportional-autoscaler', 'tag': 'v1.8.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'helm', 'value': {'enabled': True, 'file': True, 'version': 'v3.12.0', 'dest': '/tmp/releases/helm-v3.12.0/helm-v3.12.0-linux-amd64.tar.gz', 'sha256': 'da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b', 'url': 'https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'krew', 'value': {'enabled': False, 'file': True, 'version': 'v0.4.3', 'dest': '/tmp/releases/krew-linux_amd64.tar.gz', 'sha256': '5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f', 'url': 'https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'registry', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/registry', 'tag': '2.8.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'metrics_server', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/metrics-server/metrics-server', 'tag': 'v0.6.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'local_volume_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/local-volume-provisioner', 'tag': 'v2.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cephfs_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/cephfs-provisioner', 'tag': 'v2.1.0-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'rbd_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/rbd-provisioner', 'tag': 'v2.1.1-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'local_path_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/rancher/local-path-provisioner', 'tag': 'v0.0.23', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_nginx_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/ingress-nginx/controller', 'tag': 'v1.7.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_alb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-alb-ingress-controller', 'tag': 'v1.1.9', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-controller', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_cainjector', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-cainjector', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_webhook', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-webhook', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_attacher', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-attacher', 'tag': 'v3.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-provisioner', 'tag': 'v3.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_snapshotter', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-snapshotter', 'tag': 'v5.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'snapshot_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/snapshot-controller', 'tag': 'v4.2.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_resizer', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-resizer', 'tag': 'v1.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_node_driver_registrar', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-node-driver-registrar', 'tag': 'v2.4.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cinder_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/k8scloudprovider/cinder-csi-plugin', 'tag': 'v1.22.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'aws_ebs_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-ebs-csi-driver', 'tag': 'v0.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/dashboard', 'tag': 'v2.0.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard_metrics_scrapper', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/metrics-scraper', 'tag': 'v1.0.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_speaker', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/speaker', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/controller', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'yq', 'value': {'enabled': False, 'file': True, 'version': 'v4.33.3', 'dest': '/tmp/releases/yq', 'sha256': '4ee662847c588c3ef2fec8bfb304e8739e3dbaba87ccb9a608d691c88f5b64dc', 'url': 'https://github.com/mikefarah/yq/releases/download/v4.33.3/yq_linux_amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+
+TASK [kubespray-defaults : Configure defaults] *********************************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Gather ansible_default_ipv4 from all hosts] *********
+skipping: [mgmt1] => (item=mgmt1) 
+
+TASK [kubespray-defaults : create fallback_ips_base] ***************************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : set fallback_ips] ***********************************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Set no_proxy to all assigned cluster IPs and hostnames] ***
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Populates no_proxy to all hosts] ********************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Set `etcd_deployment_type` to "kubeadm" if `etcd_kubeadm_enabled` is true] ***
+skipping: [mgmt1]
+
+TASK [container-engine/containerd-common : containerd-common | check if fedora coreos] ***
+skipping: [mgmt1]
+
+TASK [container-engine/containerd-common : containerd-common | set is_ostree] ***
+skipping: [mgmt1]
+
+TASK [container-engine/containerd-common : containerd-common | gather os specific variables] ***
+skipping: [mgmt1] => (item=/home/aioadmin/deepops/submodules/kubespray/roles/container-engine/docker/vars/../vars/ubuntu.yml) 
+
+TASK [container-engine/docker-storage : docker-storage-setup | install git and make] ***
+skipping: [mgmt1] => (item=git) 
+skipping: [mgmt1] => (item=make) 
+
+TASK [container-engine/docker-storage : docker-storage-setup | docker-storage-setup sysconfig template] ***
+skipping: [mgmt1]
+
+TASK [container-engine/docker-storage : docker-storage-override-directory | docker service storage-setup override dir] ***
+skipping: [mgmt1]
+
+TASK [container-engine/docker-storage : docker-storage-override | docker service storage-setup override file] ***
+skipping: [mgmt1]
+
+TASK [container-engine/docker-storage : docker-storage-setup | install lvm2] ***
+skipping: [mgmt1]
+
+TASK [container-engine/docker-storage : docker-storage-setup | install and run container-storage-setup] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : check if fedora coreos] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : set is_ostree] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : set docker_version for openEuler] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : gather os specific variables] ***
+skipping: [mgmt1] => (item=/home/aioadmin/deepops/submodules/kubespray/roles/container-engine/docker/vars/../vars/ubuntu.yml) 
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Warn about Docker version on SUSE] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : include_tasks] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Remove legacy docker repo file] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Ensure old versions of Docker are not installed. | Debian] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Ensure podman not installed. | RedHat] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Ensure old versions of Docker are not installed. | RedHat] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : ensure docker-ce repository public key is installed] ***
+skipping: [mgmt1] => (item=) 
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : ensure docker-ce repository is enabled] ***
+skipping: [mgmt1] => (item=) 
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Configure docker repository on Fedora] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Configure docker repository on RedHat/CentOS/OracleLinux/AlmaLinux/KylinLinux] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Remove dpkg hold] ***
+skipping: [mgmt1] => (item=containerd.io) 
+skipping: [mgmt1] => (item=docker-ce) 
+skipping: [mgmt1] => (item=docker-ce-cli) 
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : ensure docker packages are installed] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Tell Debian hosts not to change the docker version with apt upgrade] ***
+skipping: [mgmt1] => (item=containerd.io) 
+skipping: [mgmt1] => (item=docker-ce) 
+skipping: [mgmt1] => (item=docker-ce-cli) 
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : ensure service is started if docker packages are already present] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : flush handlers so we can wait for docker to come up] ***
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : include_tasks] ***
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Create docker service systemd directory if it doesn't exist] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Write docker proxy drop-in] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : get systemd version] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Write docker.service systemd file] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Write docker options systemd drop-in] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Write docker dns systemd drop-in] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Copy docker orphan clean up script to the node] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Write docker orphan clean up systemd drop-in] ***
+skipping: [mgmt1]
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : Flush handlers] ***
+
+TASK [../../submodules/kubespray/roles/container-engine/docker : ensure docker service is started and enabled] ***
+skipping: [mgmt1] => (item=docker) 
+
+PLAY [kube-master] *************************************************************
+
+TASK [standalone-container-registry : create local directory for configuration] ***
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : add config file] *************************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : trust GPG key for EPEL] ******************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : Enable EPEL repo] ************************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : install python-docker] *******************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : install pip] *****************************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : install docker] **************************
+skipping: [mgmt1]
+
+TASK [standalone-container-registry : run registry docker container] ***********
+skipping: [mgmt1]
+
+PLAY [all] *********************************************************************
+
+TASK [install epel] ************************************************************
+skipping: [mgmt1]
+
+TASK [install sshpass] *********************************************************
+ok: [mgmt1]
+
+PLAY [all] *********************************************************************
+
+TASK [un-hold container runtime packages on Ubuntu] ****************************
+changed: [mgmt1] => (item=docker-ce)
+changed: [mgmt1] => (item=docker-ce-cli)
+changed: [mgmt1] => (item=docker-ce-rootless-extras)
+changed: [mgmt1] => (item=containerd.io)
+
+PLAY [localhost] ***************************************************************
+skipping: no hosts matched
+
+PLAY [Add kube-master nodes to kube_control_plane] *****************************
+
+TASK [add nodes to kube_control_plane group] ***********************************
+changed: [mgmt1]
+
+PLAY [Add kube-node nodes to kube_node] ****************************************
+
+PLAY [Add k8s-cluster nodes to k8s_cluster] ************************************
+
+TASK [add nodes to k8s_cluster group] ******************************************
+changed: [mgmt1]
+
+PLAY [Add calico-rr nodes to calico_rr] ****************************************
+skipping: no hosts matched
+
+PLAY [Add no-floating nodes to no_floating] ************************************
+skipping: no hosts matched
+
+PLAY [bastion[0]] **************************************************************
+skipping: no hosts matched
+
+PLAY [k8s_cluster:etcd:calico_rr] **********************************************
+
+TASK [download : prep_download | Set a few facts] ******************************
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if passwordless root is possible] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if user has access to the container runtime without using sudo] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Parse the outputs of the previous commands] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Check that local user is in group or can become root] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Register docker images info] ******************
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create staging directory on remote node] ******
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create local cache for files and images on control node] ***
+skipping: [mgmt1]
+
+TASK [download : download | Get kubeadm binary and list of required images] ****
+skipping: [mgmt1]
+
+TASK [download : download | Download files / images] ***************************
+skipping: [mgmt1] => (item={'key': 'netcheck_server', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-server', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'netcheck_agent', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-agent', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'etcd', 'value': {'container': False, 'file': True, 'enabled': True, 'version': 'v3.5.6', 'dest': '/tmp/releases/etcd-v3.5.6-linux-amd64.tar.gz', 'repo': 'quay.io/coreos/etcd', 'tag': 'v3.5.6', 'sha256': '4db32e3bc06dd0999e2171f76a87c1cffed8369475ec7aa7abee9023635670fb', 'url': 'https://github.com/etcd-io/etcd/releases/download/v3.5.6/etcd-v3.5.6-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['etcd']}}) 
+skipping: [mgmt1] => (item={'key': 'cni', 'value': {'enabled': True, 'file': True, 'version': 'v1.3.0', 'dest': '/tmp/releases/cni-plugins-linux-amd64-v1.3.0.tgz', 'sha256': '754a71ed60a4bd08726c3af705a7d55ee3df03122b12e389fdba4bea35d7dd7e', 'url': 'https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubeadm', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubeadm-v1.26.5-amd64', 'sha256': '793767419c382bae2dc2c9396baafbf051bfa3214accf40dcd7c5ea405583802', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubeadm', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubelet', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubelet-v1.26.5-amd64', 'sha256': 'ad5e318ff0e81bc2bef874b2038489722cfcc117bd31726d0193056458c18bff', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubelet', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubectl', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubectl-v1.26.5-amd64', 'sha256': '5080bb2e9631fe095139f7e973df9a31eb73e668d1785ffeb524832aed8f87c3', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubectl', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'crictl', 'value': {'file': True, 'enabled': True, 'version': 'v1.26.0', 'dest': '/tmp/releases/crictl-v1.26.0-linux-amd64.tar.gz', 'sha256': 'cda5e2143bf19f6b548110ffba0fe3565e03e8743fadd625fee3d62fc4134eed', 'url': 'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.26.0/crictl-v1.26.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crio', 'value': {'file': True, 'enabled': False, 'version': 'v1.26.3', 'dest': '/tmp/releases/cri-o.amd64.v1.26.3tar.gz', 'sha256': '942772081d9cd4bd0c07e466439b76a1ca95d3f10a7b53dc524d2946b2b17a71', 'url': 'https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.26.3.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cri_dockerd', 'value': {'file': True, 'enabled': False, 'version': '0.3.0', 'dest': '/tmp/releases/cri-dockerd-0.3.0.amd64.tar.gz', 'sha256': '8e6a445591e77b9570299d0afadeee26cb7aa23e4bfd7518baa6a3260b9ee889', 'url': 'https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.0/cri-dockerd-0.3.0.amd64.tgz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=1'], 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crun', 'value': {'file': True, 'enabled': False, 'version': '1.4.5', 'dest': '/tmp/releases/crun', 'sha256': '84cf20a6060cd53ac21a0590367d1ab65f74baae005c42f2d5bc1af918470455', 'url': 'https://github.com/containers/crun/releases/download/1.4.5/crun-1.4.5-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'youki', 'value': {'file': True, 'enabled': False, 'version': '0.0.1', 'dest': '/tmp/releases/youki_v0_0_1_linux.tar.gz', 'sha256': '8bd712fe95c8a81194bfbc54c70516350f95153d67044579af95788fbafd943b', 'url': 'https://github.com/containers/youki/releases/download/v0.0.1/youki_v0_0_1_linux.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'runc', 'value': {'file': True, 'enabled': True, 'version': 'v1.1.7', 'dest': '/tmp/releases/runc', 'sha256': 'c3aadb419e5872af49504b6de894055251d2e685fddddb981a79703e7f895cbd', 'url': 'https://github.com/opencontainers/runc/releases/download/v1.1.7/runc.amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kata_containers', 'value': {'enabled': False, 'file': True, 'version': '2.4.1', 'dest': '/tmp/releases/kata-static-2.4.1-amd64.tar.xz', 'sha256': 'e234ffce779d451dc2a170b394b91d35b96e44ea50dc4a3256defa603efdf607', 'url': 'https://github.com/kata-containers/kata-containers/releases/download/2.4.1/kata-static-2.4.1-x86_64.tar.xz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'containerd', 'value': {'enabled': True, 'file': True, 'version': '1.7.1', 'dest': '/tmp/releases/containerd-1.7.1-linux-amd64.tar.gz', 'sha256': '9504771bcb816d3b27fab37a6cf76928ee5e95a31eb41510a7d10ae726e01e85', 'url': 'https://github.com/containerd/containerd/releases/download/v1.7.1/containerd-1.7.1-linux-amd64.tar.gz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_runsc', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-runsc', 'sha256': 'af5b4527b2d63eea6d0cc2c5522b1e76163df695e9484475e378ec29f7baa661', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/runsc', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_containerd_shim', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-containerd-shim-runsc-v1', 'sha256': '9ed085fcdbf6f300474e10f2f32b323038568342ce8130298f56e13d14484daa', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/containerd-shim-runsc-v1', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nerdctl', 'value': {'file': True, 'enabled': True, 'version': '1.4.0', 'dest': '/tmp/releases/nerdctl-1.4.0-linux-amd64.tar.gz', 'sha256': 'd8dcd4e270ae76ab294be3a451a2d8299010e69dce6ae559bc3193535610e4cc', 'url': 'https://github.com/containerd/nerdctl/releases/download/v1.4.0/nerdctl-1.4.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'skopeo', 'value': {'file': True, 'enabled': False, 'version': 'v1.10.0', 'dest': '/tmp/releases/skopeo', 'sha256': '20fbd1bac1d33768c3671e4fe9d90c5233d7e13a40e4935b4b24ebc083390604', 'url': 'https://github.com/lework/skopeo-binary/releases/download/v1.10.0/skopeo-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/cilium', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_operator', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/operator', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_relay', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-relay', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_certgen', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/certgen', 'tag': 'v0.1.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui_backend', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui-backend', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_envoy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/envoyproxy/envoy', 'tag': 'v1.22.5', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'ciliumcli', 'value': {'enabled': False, 'file': True, 'version': 'v0.13.1', 'dest': '/tmp/releases/cilium', 'sha256': 'dfabb7a080cd2ae40c71e51980183949bd5ce76184ac439ef32f988825cb275d', 'url': 'https://github.com/cilium/cilium-cli/releases/download/v0.13.1/cilium-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'multus', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/k8snetworkplumbingwg/multus-cni', 'tag': 'v3.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannel/flannel', 'tag': 'v0.21.4', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel_init', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannelcni/flannel-cni-plugin', 'tag': 'v1.2.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calicoctl', 'value': {'enabled': True, 'file': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calicoctl', 'sha256': '13565e5304209ffaa93df3ba722e6f623b66c76057ca8ff5c5864fa13176fe48', 'url': 'https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64', 'mirrors': ['https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64'], 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_node', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/node', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_cni', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/cni', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_flexvol', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/pod2daemon-flexvol', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_policy', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/kube-controllers', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_typha', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/typha', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_apiserver', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/apiserver', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_crds', 'value': {'file': True, 'enabled': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calico-v3.25.1-kdd-crds/v3.25.1.tar.gz', 'sha256': '4d6b6653499f24f80a85a0a7dac28d9571cabfa25356b08f3b438fd97e322e2d', 'url': 'https://github.com/projectcalico/calico/archive/v3.25.1.tar.gz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=3', '--wildcards', '*/libcalico-go/config/crd/'], 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_kube', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-kube', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_npc', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-npc', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_ovn', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/kubeovn/kube-ovn', 'tag': 'v1.10.7', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_router', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/cloudnativelabs/kube-router', 'tag': 'v1.5.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'pod_infra', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/pause', 'tag': '3.9', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube-vip', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/kube-vip/kube-vip', 'tag': 'v0.5.12', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'nginx', 'value': {'enabled': True, 'container': True, 'repo': 'docker.io/library/nginx', 'tag': '1.23.2-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'haproxy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/haproxy', 'tag': '2.6.6-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'coredns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/coredns/coredns', 'tag': 'v1.9.3', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nodelocaldns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/dns/k8s-dns-node-cache', 'tag': '1.22.18', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'dnsautoscaler', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/cpa/cluster-proportional-autoscaler', 'tag': 'v1.8.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'helm', 'value': {'enabled': True, 'file': True, 'version': 'v3.12.0', 'dest': '/tmp/releases/helm-v3.12.0/helm-v3.12.0-linux-amd64.tar.gz', 'sha256': 'da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b', 'url': 'https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'krew', 'value': {'enabled': False, 'file': True, 'version': 'v0.4.3', 'dest': '/tmp/releases/krew-linux_amd64.tar.gz', 'sha256': '5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f', 'url': 'https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'registry', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/registry', 'tag': '2.8.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'metrics_server', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/metrics-server/metrics-server', 'tag': 'v0.6.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'local_volume_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/local-volume-provisioner', 'tag': 'v2.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cephfs_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/cephfs-provisioner', 'tag': 'v2.1.0-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'rbd_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/rbd-provisioner', 'tag': 'v2.1.1-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'local_path_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/rancher/local-path-provisioner', 'tag': 'v0.0.23', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_nginx_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/ingress-nginx/controller', 'tag': 'v1.7.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_alb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-alb-ingress-controller', 'tag': 'v1.1.9', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-controller', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_cainjector', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-cainjector', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_webhook', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-webhook', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_attacher', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-attacher', 'tag': 'v3.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-provisioner', 'tag': 'v3.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_snapshotter', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-snapshotter', 'tag': 'v5.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'snapshot_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/snapshot-controller', 'tag': 'v4.2.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_resizer', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-resizer', 'tag': 'v1.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_node_driver_registrar', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-node-driver-registrar', 'tag': 'v2.4.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cinder_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/k8scloudprovider/cinder-csi-plugin', 'tag': 'v1.22.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'aws_ebs_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-ebs-csi-driver', 'tag': 'v0.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/dashboard', 'tag': 'v2.0.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard_metrics_scrapper', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/metrics-scraper', 'tag': 'v1.0.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_speaker', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/speaker', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/controller', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'yq', 'value': {'enabled': False, 'file': True, 'version': 'v4.33.3', 'dest': '/tmp/releases/yq', 'sha256': '4ee662847c588c3ef2fec8bfb304e8739e3dbaba87ccb9a608d691c88f5b64dc', 'url': 'https://github.com/mikefarah/yq/releases/download/v4.33.3/yq_linux_amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+
+TASK [kubespray-defaults : Configure defaults] *********************************
+ok: [mgmt1] => 
+  msg: Check roles/kubespray-defaults/defaults/main.yml
+
+TASK [kubespray-defaults : Gather ansible_default_ipv4 from all hosts] *********
+skipping: [mgmt1] => (item=mgmt1) 
+
+TASK [kubespray-defaults : create fallback_ips_base] ***************************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : set fallback_ips] ***********************************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Set no_proxy to all assigned cluster IPs and hostnames] ***
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Populates no_proxy to all hosts] ********************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Set `etcd_deployment_type` to "kubeadm" if `etcd_kubeadm_enabled` is true] ***
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Fetch /etc/os-release] ************************************
+ok: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+included: /home/aioadmin/deepops/submodules/kubespray/roles/bootstrap-os/tasks/bootstrap-debian.yml for mgmt1
+
+TASK [bootstrap-os : Check if bootstrap is needed] *****************************
+ok: [mgmt1]
+
+TASK [bootstrap-os : Check http::proxy in apt configuration files] *************
+ok: [mgmt1]
+
+TASK [bootstrap-os : Add http_proxy to /etc/apt/apt.conf if http_proxy is defined] ***
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Check https::proxy in apt configuration files] ************
+ok: [mgmt1]
+
+TASK [bootstrap-os : Add https_proxy to /etc/apt/apt.conf if https_proxy is defined] ***
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Install python3] ******************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Update Apt cache] *****************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Set the ansible_python_interpreter fact] ******************
+ok: [mgmt1]
+
+TASK [bootstrap-os : Install dbus for the hostname module] *********************
+ok: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : include_tasks] ********************************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Create remote_tmp for it is used by another module] *******
+ok: [mgmt1]
+
+TASK [bootstrap-os : Gather host facts to get ansible_os_family] ***************
+ok: [mgmt1]
+
+TASK [bootstrap-os : Assign inventory name to unconfigured hostnames (non-CoreOS, non-Flatcar, Suse and ClearLinux, non-Fedora)] ***
+ok: [mgmt1]
+
+TASK [bootstrap-os : Assign inventory name to unconfigured hostnames (CoreOS, Flatcar, Suse, ClearLinux and Fedora only)] ***
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Update hostname fact (CoreOS, Flatcar, Suse, ClearLinux and Fedora only)] ***
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Install ceph-commmon package] *****************************
+skipping: [mgmt1]
+
+TASK [bootstrap-os : Ensure bash_completion.d folder exists] *******************
+ok: [mgmt1]
+
+PLAY [Gather facts] ************************************************************
+
+TASK [Gather minimal facts] ****************************************************
+ok: [mgmt1]
+
+TASK [Gather necessary facts (network)] ****************************************
+ok: [mgmt1]
+
+TASK [Gather necessary facts (hardware)] ***************************************
+ok: [mgmt1]
+
+PLAY [k8s_cluster:etcd] ********************************************************
+
+TASK [download : prep_download | Set a few facts] ******************************
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if passwordless root is possible] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | On localhost, check if user has access to the container runtime without using sudo] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Parse the outputs of the previous commands] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Check that local user is in group or can become root] ***
+skipping: [mgmt1]
+
+TASK [download : prep_download | Register docker images info] ******************
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create staging directory on remote node] ******
+skipping: [mgmt1]
+
+TASK [download : prep_download | Create local cache for files and images on control node] ***
+skipping: [mgmt1]
+
+TASK [download : download | Get kubeadm binary and list of required images] ****
+skipping: [mgmt1]
+
+TASK [download : download | Download files / images] ***************************
+skipping: [mgmt1] => (item={'key': 'netcheck_server', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-server', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'netcheck_agent', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/mirantis/k8s-netchecker-agent', 'tag': 'v1.2.2', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'etcd', 'value': {'container': False, 'file': True, 'enabled': True, 'version': 'v3.5.6', 'dest': '/tmp/releases/etcd-v3.5.6-linux-amd64.tar.gz', 'repo': 'quay.io/coreos/etcd', 'tag': 'v3.5.6', 'sha256': '4db32e3bc06dd0999e2171f76a87c1cffed8369475ec7aa7abee9023635670fb', 'url': 'https://github.com/etcd-io/etcd/releases/download/v3.5.6/etcd-v3.5.6-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['etcd']}}) 
+skipping: [mgmt1] => (item={'key': 'cni', 'value': {'enabled': True, 'file': True, 'version': 'v1.3.0', 'dest': '/tmp/releases/cni-plugins-linux-amd64-v1.3.0.tgz', 'sha256': '754a71ed60a4bd08726c3af705a7d55ee3df03122b12e389fdba4bea35d7dd7e', 'url': 'https://github.com/containernetworking/plugins/releases/download/v1.3.0/cni-plugins-linux-amd64-v1.3.0.tgz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubeadm', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubeadm-v1.26.5-amd64', 'sha256': '793767419c382bae2dc2c9396baafbf051bfa3214accf40dcd7c5ea405583802', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubeadm', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubelet', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubelet-v1.26.5-amd64', 'sha256': 'ad5e318ff0e81bc2bef874b2038489722cfcc117bd31726d0193056458c18bff', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubelet', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kubectl', 'value': {'enabled': True, 'file': True, 'version': 'v1.26.5', 'dest': '/tmp/releases/kubectl-v1.26.5-amd64', 'sha256': '5080bb2e9631fe095139f7e973df9a31eb73e668d1785ffeb524832aed8f87c3', 'url': 'https://dl.k8s.io/release/v1.26.5/bin/linux/amd64/kubectl', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'crictl', 'value': {'file': True, 'enabled': True, 'version': 'v1.26.0', 'dest': '/tmp/releases/crictl-v1.26.0-linux-amd64.tar.gz', 'sha256': 'cda5e2143bf19f6b548110ffba0fe3565e03e8743fadd625fee3d62fc4134eed', 'url': 'https://github.com/kubernetes-sigs/cri-tools/releases/download/v1.26.0/crictl-v1.26.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crio', 'value': {'file': True, 'enabled': False, 'version': 'v1.26.3', 'dest': '/tmp/releases/cri-o.amd64.v1.26.3tar.gz', 'sha256': '942772081d9cd4bd0c07e466439b76a1ca95d3f10a7b53dc524d2946b2b17a71', 'url': 'https://storage.googleapis.com/cri-o/artifacts/cri-o.amd64.v1.26.3.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cri_dockerd', 'value': {'file': True, 'enabled': False, 'version': '0.3.0', 'dest': '/tmp/releases/cri-dockerd-0.3.0.amd64.tar.gz', 'sha256': '8e6a445591e77b9570299d0afadeee26cb7aa23e4bfd7518baa6a3260b9ee889', 'url': 'https://github.com/Mirantis/cri-dockerd/releases/download/v0.3.0/cri-dockerd-0.3.0.amd64.tgz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=1'], 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'crun', 'value': {'file': True, 'enabled': False, 'version': '1.4.5', 'dest': '/tmp/releases/crun', 'sha256': '84cf20a6060cd53ac21a0590367d1ab65f74baae005c42f2d5bc1af918470455', 'url': 'https://github.com/containers/crun/releases/download/1.4.5/crun-1.4.5-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'youki', 'value': {'file': True, 'enabled': False, 'version': '0.0.1', 'dest': '/tmp/releases/youki_v0_0_1_linux.tar.gz', 'sha256': '8bd712fe95c8a81194bfbc54c70516350f95153d67044579af95788fbafd943b', 'url': 'https://github.com/containers/youki/releases/download/v0.0.1/youki_v0_0_1_linux.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'runc', 'value': {'file': True, 'enabled': True, 'version': 'v1.1.7', 'dest': '/tmp/releases/runc', 'sha256': 'c3aadb419e5872af49504b6de894055251d2e685fddddb981a79703e7f895cbd', 'url': 'https://github.com/opencontainers/runc/releases/download/v1.1.7/runc.amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kata_containers', 'value': {'enabled': False, 'file': True, 'version': '2.4.1', 'dest': '/tmp/releases/kata-static-2.4.1-amd64.tar.xz', 'sha256': 'e234ffce779d451dc2a170b394b91d35b96e44ea50dc4a3256defa603efdf607', 'url': 'https://github.com/kata-containers/kata-containers/releases/download/2.4.1/kata-static-2.4.1-x86_64.tar.xz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'containerd', 'value': {'enabled': True, 'file': True, 'version': '1.7.1', 'dest': '/tmp/releases/containerd-1.7.1-linux-amd64.tar.gz', 'sha256': '9504771bcb816d3b27fab37a6cf76928ee5e95a31eb41510a7d10ae726e01e85', 'url': 'https://github.com/containerd/containerd/releases/download/v1.7.1/containerd-1.7.1-linux-amd64.tar.gz', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_runsc', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-runsc', 'sha256': 'af5b4527b2d63eea6d0cc2c5522b1e76163df695e9484475e378ec29f7baa661', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/runsc', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'gvisor_containerd_shim', 'value': {'enabled': False, 'file': True, 'version': 20210921, 'dest': '/tmp/releases/gvisor-containerd-shim-runsc-v1', 'sha256': '9ed085fcdbf6f300474e10f2f32b323038568342ce8130298f56e13d14484daa', 'url': 'https://storage.googleapis.com/gvisor/releases/release/20210921/x86_64/containerd-shim-runsc-v1', 'unarchive': False, 'owner': 'root', 'mode': 755, 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nerdctl', 'value': {'file': True, 'enabled': True, 'version': '1.4.0', 'dest': '/tmp/releases/nerdctl-1.4.0-linux-amd64.tar.gz', 'sha256': 'd8dcd4e270ae76ab294be3a451a2d8299010e69dce6ae559bc3193535610e4cc', 'url': 'https://github.com/containerd/nerdctl/releases/download/v1.4.0/nerdctl-1.4.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'skopeo', 'value': {'file': True, 'enabled': False, 'version': 'v1.10.0', 'dest': '/tmp/releases/skopeo', 'sha256': '20fbd1bac1d33768c3671e4fe9d90c5233d7e13a40e4935b4b24ebc083390604', 'url': 'https://github.com/lework/skopeo-binary/releases/download/v1.10.0/skopeo-linux-amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/cilium', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_operator', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/operator', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_relay', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-relay', 'tag': 'v1.13.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_certgen', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/certgen', 'tag': 'v0.1.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_ui_backend', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/cilium/hubble-ui-backend', 'tag': 'v0.11.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'cilium_hubble_envoy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/envoyproxy/envoy', 'tag': 'v1.22.5', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'ciliumcli', 'value': {'enabled': False, 'file': True, 'version': 'v0.13.1', 'dest': '/tmp/releases/cilium', 'sha256': 'dfabb7a080cd2ae40c71e51980183949bd5ce76184ac439ef32f988825cb275d', 'url': 'https://github.com/cilium/cilium-cli/releases/download/v0.13.1/cilium-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'multus', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/k8snetworkplumbingwg/multus-cni', 'tag': 'v3.8', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannel/flannel', 'tag': 'v0.21.4', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'flannel_init', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/flannelcni/flannel-cni-plugin', 'tag': 'v1.2.0', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calicoctl', 'value': {'enabled': True, 'file': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calicoctl', 'sha256': '13565e5304209ffaa93df3ba722e6f623b66c76057ca8ff5c5864fa13176fe48', 'url': 'https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64', 'mirrors': ['https://github.com/projectcalico/calico/releases/download/v3.25.1/calicoctl-linux-amd64'], 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_node', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/node', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_cni', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/cni', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_flexvol', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/pod2daemon-flexvol', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_policy', 'value': {'enabled': True, 'container': True, 'repo': 'quay.io/calico/kube-controllers', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_typha', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/typha', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_apiserver', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/calico/apiserver', 'tag': 'v3.25.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'calico_crds', 'value': {'file': True, 'enabled': True, 'version': 'v3.25.1', 'dest': '/tmp/releases/calico-v3.25.1-kdd-crds/v3.25.1.tar.gz', 'sha256': '4d6b6653499f24f80a85a0a7dac28d9571cabfa25356b08f3b438fd97e322e2d', 'url': 'https://github.com/projectcalico/calico/archive/v3.25.1.tar.gz', 'unarchive': True, 'unarchive_extra_opts': ['--strip=3', '--wildcards', '*/libcalico-go/config/crd/'], 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_kube', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-kube', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'weave_npc', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/weaveworks/weave-npc', 'tag': '2.8.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_ovn', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/kubeovn/kube-ovn', 'tag': 'v1.10.7', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube_router', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/cloudnativelabs/kube-router', 'tag': 'v1.5.1', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'pod_infra', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/pause', 'tag': '3.9', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'kube-vip', 'value': {'enabled': False, 'container': True, 'repo': 'ghcr.io/kube-vip/kube-vip', 'tag': 'v0.5.12', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'nginx', 'value': {'enabled': True, 'container': True, 'repo': 'docker.io/library/nginx', 'tag': '1.23.2-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'haproxy', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/haproxy', 'tag': '2.6.6-alpine', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'coredns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/coredns/coredns', 'tag': 'v1.9.3', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'nodelocaldns', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/dns/k8s-dns-node-cache', 'tag': '1.22.18', 'sha256': '', 'groups': ['k8s_cluster']}}) 
+skipping: [mgmt1] => (item={'key': 'dnsautoscaler', 'value': {'enabled': True, 'container': True, 'repo': 'registry.k8s.io/cpa/cluster-proportional-autoscaler', 'tag': 'v1.8.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'helm', 'value': {'enabled': True, 'file': True, 'version': 'v3.12.0', 'dest': '/tmp/releases/helm-v3.12.0/helm-v3.12.0-linux-amd64.tar.gz', 'sha256': 'da36e117d6dbc57c8ec5bab2283222fbd108db86c83389eebe045ad1ef3e2c3b', 'url': 'https://get.helm.sh/helm-v3.12.0-linux-amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'krew', 'value': {'enabled': False, 'file': True, 'version': 'v0.4.3', 'dest': '/tmp/releases/krew-linux_amd64.tar.gz', 'sha256': '5df32eaa0e888a2566439c4ccb2ef3a3e6e89522f2f2126030171e2585585e4f', 'url': 'https://github.com/kubernetes-sigs/krew/releases/download/v0.4.3/krew-linux_amd64.tar.gz', 'unarchive': True, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'registry', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/library/registry', 'tag': '2.8.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'metrics_server', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/metrics-server/metrics-server', 'tag': 'v0.6.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'local_volume_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/local-volume-provisioner', 'tag': 'v2.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cephfs_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/cephfs-provisioner', 'tag': 'v2.1.0-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'rbd_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/external_storage/rbd-provisioner', 'tag': 'v2.1.1-k8s1.11', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'local_path_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/rancher/local-path-provisioner', 'tag': 'v0.0.23', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_nginx_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/ingress-nginx/controller', 'tag': 'v1.7.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'ingress_alb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-alb-ingress-controller', 'tag': 'v1.1.9', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-controller', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_cainjector', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-cainjector', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cert_manager_webhook', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/jetstack/cert-manager-webhook', 'tag': 'v1.11.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_attacher', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-attacher', 'tag': 'v3.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_provisioner', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-provisioner', 'tag': 'v3.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_snapshotter', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-snapshotter', 'tag': 'v5.0.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'snapshot_controller', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/snapshot-controller', 'tag': 'v4.2.1', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_resizer', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-resizer', 'tag': 'v1.3.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'csi_node_driver_registrar', 'value': {'enabled': False, 'container': True, 'repo': 'registry.k8s.io/sig-storage/csi-node-driver-registrar', 'tag': 'v2.4.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'cinder_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/k8scloudprovider/cinder-csi-plugin', 'tag': 'v1.22.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'aws_ebs_csi_plugin', 'value': {'enabled': False, 'container': True, 'repo': 'docker.io/amazon/aws-ebs-csi-driver', 'tag': 'v0.5.0', 'sha256': '', 'groups': ['kube_node']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/dashboard', 'tag': 'v2.0.3', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'dashboard_metrics_scrapper', 'value': {'enabled': True, 'container': True, 'repo': 'kubernetesui/metrics-scraper', 'tag': 'v1.0.8', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_speaker', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/speaker', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'metallb_controller', 'value': {'enabled': False, 'container': True, 'repo': 'quay.io/metallb/controller', 'tag': 'v0.13.9', 'sha256': '', 'groups': ['kube_control_plane']}}) 
+skipping: [mgmt1] => (item={'key': 'yq', 'value': {'enabled': False, 'file': True, 'version': 'v4.33.3', 'dest': '/tmp/releases/yq', 'sha256': '4ee662847c588c3ef2fec8bfb304e8739e3dbaba87ccb9a608d691c88f5b64dc', 'url': 'https://github.com/mikefarah/yq/releases/download/v4.33.3/yq_linux_amd64', 'unarchive': False, 'owner': 'root', 'mode': '0755', 'groups': ['kube_control_plane']}}) 
+
+TASK [kubespray-defaults : Configure defaults] *********************************
+ok: [mgmt1] => 
+  msg: Check roles/kubespray-defaults/defaults/main.yml
+
+TASK [kubespray-defaults : Gather ansible_default_ipv4 from all hosts] *********
+skipping: [mgmt1] => (item=mgmt1) 
+
+TASK [kubespray-defaults : create fallback_ips_base] ***************************
+ok: [mgmt1 -> localhost]
+
+TASK [kubespray-defaults : set fallback_ips] ***********************************
+ok: [mgmt1]
+
+TASK [kubespray-defaults : Set no_proxy to all assigned cluster IPs and hostnames] ***
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Populates no_proxy to all hosts] ********************
+skipping: [mgmt1]
+
+TASK [kubespray-defaults : Set `etcd_deployment_type` to "kubeadm" if `etcd_kubeadm_enabled` is true] ***
+skipping: [mgmt1]
+
+TASK [adduser : User | Create User Group] **************************************
+ok: [mgmt1]
+
+TASK [adduser : User | Create User] ********************************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : Remove swapfile from /etc/fstab] *****************
+ok: [mgmt1] => (item=swap)
+ok: [mgmt1] => (item=none)
+
+TASK [kubernetes/preinstall : check swap] **************************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : Disable swap] ************************************
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : Disable swapOnZram for Fedora] *******************
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : Force binaries directory for Flatcar Container Linux by Kinvolk] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : Set os_family fact for other redhat-based operating systems] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : Set os_family fact for other debian-based operating systems] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : check if booted with ostree] *********************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : set is_fedora_coreos] ****************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : set is_fedora_coreos] ****************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check resolvconf] ********************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check existence of /etc/resolvconf/resolv.conf.d] ***
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check status of /etc/resolv.conf] ****************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : get content of /etc/resolv.conf] *****************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : get currently configured nameservers] ************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : Stop if /etc/resolv.conf not configured nameservers] ***
+ok: [mgmt1] => changed=false 
+  msg: All assertions passed
+
+TASK [kubernetes/preinstall : NetworkManager | Check if host has NetworkManager] ***
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check systemd-resolved] **************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : set default dns if remove_default_searchdomains is false] ***
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : set dns facts] ***********************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check if kubelet is configured] ******************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : check if early DNS configuration stage] **********
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : target resolv.conf files] ************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : target temporary resolvconf cloud init file (Flatcar Container Linux by Kinvolk / Fedora CoreOS)] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : check if /etc/dhclient.conf exists] **************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : target dhclient conf file for /etc/dhclient.conf] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : check if /etc/dhcp/dhclient.conf exists] *********
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : target dhclient conf file for /etc/dhcp/dhclient.conf] ***
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : target dhclient hook file for Red Hat family] ****
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : target dhclient hook file for Debian family] *****
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : generate search domains to resolvconf] ***********
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : pick coredns cluster IP or default resolver] *****
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : generate nameservers for resolvconf, including cluster DNS] ***
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : generate nameservers for resolvconf, not including cluster DNS] ***
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : gather os specific variables] ********************
+ok: [mgmt1] => (item=/home/aioadmin/deepops/submodules/kubespray/roles/kubernetes/preinstall/vars/../vars/ubuntu.yml)
+
+TASK [kubernetes/preinstall : set etcd vars if using kubeadm mode] *************
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : check /usr readonly] *****************************
+ok: [mgmt1]
+
+TASK [kubernetes/preinstall : set alternate flexvolume path] *******************
+skipping: [mgmt1]
+
+TASK [kubernetes/preinstall : Stop if either kube_control_plane or kube_node group is empty] ***
+ok: [mgmt1] => (item=kube_control_plane) => changed=false 
+  ansible_loop_var: item
+  item: kube_control_plane
+  msg: All assertions passed
+failed: [mgmt1] (item=kube_node) => changed=false 
+  ansible_loop_var: item
+  assertion: groups.get('kube_node')
+  evaluated_to: false
+  item: kube_node
+  msg: Assertion failed
+
+NO MORE HOSTS LEFT *************************************************************
+
+PLAY RECAP *********************************************************************
+dgx1                       : ok=2    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+dgx2                       : ok=2    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+dgx3                       : ok=2    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+dgx4                       : ok=2    changed=1    unreachable=0    failed=1    skipped=2    rescued=0    ignored=0   
+mgmt1                      : ok=85   changed=6    unreachable=0    failed=1    skipped=166  rescued=0    ignored=0   
+
