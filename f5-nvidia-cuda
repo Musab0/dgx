@@ -1,0 +1,14 @@
+Origin: NVIDIA
+Label: NVIDIA CUDA
+Architecture: x86_64
+Date: Wed, 01 Nov 2023 23:03:45 +0000
+MD5Sum:
+ f6d8c8827a21b79a44589142a06ea68a                                          6146592 Packages
+ e91d91d66c7ed75dbbc280053b6a45fa                                          1270902 Packages.gz
+SHA1:
+ 352b06813a9b74aa8bff62cfbb6c5997542fe84d                                  6146592 Packages
+ 1c46f664a2879fc37cdae4ad0604850f6bccb6c5                                  1270902 Packages.gz
+SHA256:
+ fe98d8dfcfd57754a3a1367c1ef2bfa19290064ff3690a5923c2b24882b89001          6146592 Packages
+ 22fbeefb805e9619752075ad7cda5cfde18f20d3ff91c87a5aa110d3dec88d8e          1270902 Packages.gz
+Acquire-By-Hash: no
